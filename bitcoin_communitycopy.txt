@@ -1,21 +1,14 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Mon Apr 26 23:41:20 2021
-
-@author: shrutipatil
-"""
 
 from igraph import *
 
-diwann_sars = Graph.Read('newgraph2015.gml')
+G = Graph.Read('newgraph2015.gml')
 
-diwann_sars_undirected= diwann_sars.as_undirected()       #if graph is directed, convert to undirected
-communities = diwann_sars_undirected.community_multilevel()
+UG= G.as_undirected()       #if graph is directed, convert to undirected
+communities = UG.community_multilevel()
 #num_communities = communities.optimal_count
-clusters_sars=communities
-plot(clusters_sars, 'community_diwann.png',mark_groups=True,**style)
-clust_list_japonica=list(clusters_sars)
+clus=communities
+plot(clus, 'comm.png',mark_groups=True,**style)
+clust_list_japonica=list(clus)
 
 
 style = {}
@@ -30,4 +23,3 @@ style["edge_color"]="black"
 style["vertex_size"]=10
 style["vertex.label.font"]=1.5
 
-2015fr
