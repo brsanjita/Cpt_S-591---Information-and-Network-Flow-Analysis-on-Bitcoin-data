@@ -8,7 +8,7 @@ communities = UG.community_multilevel()
 #num_communities = communities.optimal_count
 clus=communities
 plot(clus, 'comm.png',mark_groups=True,**style)
-clust_list_japonica=list(clus)
+clust_list=list(clus)
 
 
 style = {}
